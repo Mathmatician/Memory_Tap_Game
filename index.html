@@ -66,7 +66,7 @@
 		to {background-position:10000px 0;}
 	}
 
-	.stars, .twinkling, .clouds {
+	.twinkling, .clouds {
 	  position:absolute;
 	  top:0;
 	  left:0;
@@ -77,10 +77,6 @@
 	  display:block;
 	}
 
-	.stars {
-	  background:#000 url(stars.png) repeat top center;
-	  z-index:0;
-	}
 
 	.twinkling{
 		background:transparent url(twinkling.png) repeat top center;
@@ -107,16 +103,23 @@
 	
 	#log {
 		position: absolute;
-		transform: scale(4);
+		width: 600px;
+		height: 60px;
+		margin-top: -25px;
+		margin-left: -90px;
 		user-select: none;
+		font-size: 60px;
 	}
 	
 	#regulateText {
 		position: absolute;
-		top: 10%;
-		left: 30%;
-		transform: scale(4);
+		width: 300px;
+		height: 90px;
+		text-align: center;
+		margin-top: -25px;
+		margin-left: -90px;
 		user-select: none;
+		font-size: 60px;
 	}
 	
 	#loseBox {
@@ -125,7 +128,6 @@
 		text-align: center;
 		width: 35%;
 		height: 35%;
-		
 		white-space: nowrap;
 		overflow: hidden;
 		user-select: none;
@@ -158,9 +160,14 @@
 	
 	#affirmPlay {
 		position: absolute;
+		width: 700px;
+		height: 80px;
+		text-align: center;
+		margin-left: -220px;
+		margin-top: -20px;
 		font-weight: bold;
-		transform: scale(4);
 		user-select: none;
+		font-size: 60px;
 	}
 	
 	#grid {
@@ -181,7 +188,10 @@
 	}
 	
 	body {
+		background-color: black;
+		background-image: url(stars.png);
 		overflow: hidden;
+		scroll-margin: 2000px;
 	}
 	
 	#modeSelectionBox {
@@ -449,7 +459,15 @@ var event;
 
 function EnableScrolling()
 {
-	document.getElementById("body").style.overflow = "scroll";
+	if (screen.width === window.innerWidth)
+	{
+		window.scrollTo(0, 0);
+		document.getElementById("body").style.overflow = "hidden";
+	}
+	else
+	{
+		document.getElementById("body").style.overflow = "scroll";
+	}
 }
 
 function Slow()
