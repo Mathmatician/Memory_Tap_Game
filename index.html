@@ -303,6 +303,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 { 
 	document.getElementById("playButton").style.marginLeft = "520px";
 	document.getElementById("playButton").style.marginTop = "520px";
+	document.getElementById("body").style.overflow = "scroll";
+	window.scrollTo(500, 0);
+	document.getElementById("body").style.overflow = "hidden";
+	
     isMobile = true;
 	loseBoxY = 0.73;
 	loseBoxX = 0.68;
