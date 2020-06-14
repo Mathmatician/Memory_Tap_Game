@@ -504,7 +504,7 @@ function OpenModeSelection()
 	
 	modeSelectionBox.style.display = "block";
 	
-	document.documentElement.requestFullscreen();
+	document.getElementsByTagName("body").webkitRequestFullscreen();
 }
 
 function Play()
