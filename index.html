@@ -469,14 +469,25 @@ var event;
 
 function EnableScrolling()
 {
-	if (screen.width === window.innerWidth)
+	if (!isMobile)
 	{
-		window.scrollTo(0, 0);
-		document.getElementById("body").style.overflow = "hidden";
+		if (screen.width === window.innerWidth)
+		{
+			window.scrollTo(0, 0);
+			document.getElementById("body").style.overflow = "hidden";
+		}
+		else
+		{
+			document.getElementById("body").style.overflow = "scroll";
+		}
 	}
 	else
 	{
-		document.getElementById("body").style.overflow = "scroll";
+		document.getElementById("playButton").style.marginLeft = "520px";
+		document.getElementById("playButton").style.marginTop = "520px";
+	
+		document.getElementById("mainScreen").style.marginLeft = "200px";
+		document.getElementById("mainScreen").style.marginTop = "-100px";
 	}
 }
 
